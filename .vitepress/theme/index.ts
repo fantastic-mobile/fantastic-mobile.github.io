@@ -20,10 +20,10 @@ export default {
 
     // 评论组件 - https://giscus.app/
     giscusTalk({
-      repo: 'hooray/fantastic-startkit',
-      repoId: 'MDEwOlJlcG9zaXRvcnkzNzMzNjIxOTI=',
+      repo: 'fantastic-mobile/fantastic-mobile.github.io',
+      repoId: 'R_kgDOL53UCw',
       category: 'Announcements', // 默认: `General`
-      categoryId: 'DIC_kwDOFkEOEM4CeRHv',
+      categoryId: 'DIC_kwDOL53UC84CfRvQ',
       mapping: 'pathname', // 默认: `pathname`
       inputPosition: 'top', // 默认: `top`
       lang: 'zh-CN', // 默认: `zh-CN`

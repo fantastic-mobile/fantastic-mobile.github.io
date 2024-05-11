@@ -10,6 +10,20 @@ export default defineConfig({
     ['meta', { name: 'keywords', content: 'vue,vite,router,vuex,pinia,typescript,template,h5,mobile,移动端,模板' }],
     ['keywords', { content: 'vue,vite,router,vuex,pinia,typescript,template,h5,mobile,移动端,模板' }],
     ['description', { content: '自成一派的移动端 H5 框架，采用 Vue3 + Vite 技术栈。' }],
+    ['script', {}, `
+var _hmt = _hmt || [];
+_hmt.push(['_requirePlugin', 'UrlChangeTracker', {
+  shouldTrackUrlChange: function(newPath, oldPath) {
+    return newPath && oldPath;
+  }
+}]);
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d93eb564371af3b9e7818f9ee32229e3";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+    `],
   ],
   markdown: {
     config: (md) => {
@@ -17,6 +31,7 @@ export default defineConfig({
     },
   },
   themeConfig: {
+    // logo: '/logo.png',
     footer: {
       copyright: 'Copyright © 2024-present Fantastic-mobile',
     },
@@ -72,18 +87,18 @@ export default defineConfig({
     //   ],
     // },
     outline: 'deep',
-    search: {
-      provider: 'local',
-      options: {
-        translations: {
-          button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
-          modal: {
-            noResultsText: '无法找到相关结果',
-            resetButtonTitle: '清除查询条件',
-            footer: { selectText: '选择', navigateText: '切换', closeText: '关闭' },
-          },
-        },
-      },
-    },
+    // search: {
+    //   provider: 'local',
+    //   options: {
+    //     translations: {
+    //       button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
+    //       modal: {
+    //         noResultsText: '无法找到相关结果',
+    //         resetButtonTitle: '清除查询条件',
+    //         footer: { selectText: '选择', navigateText: '切换', closeText: '关闭' },
+    //       },
+    //     },
+    //   },
+    // },
   },
 })
