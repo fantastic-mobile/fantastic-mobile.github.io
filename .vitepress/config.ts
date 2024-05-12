@@ -31,7 +31,7 @@ _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
     },
   },
   themeConfig: {
-    // logo: '/logo.png',
+    logo: '/logo.png',
     footer: {
       copyright: 'Copyright © 2024-present Fantastic-mobile',
     },
