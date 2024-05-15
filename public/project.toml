@@ -1,4 +1,0 @@
-[[redirects]]
-from = "/pro-example/*"
-to = "https://fantastic-mobile-pro-example.pages.dev/:splat"
-status = 200
