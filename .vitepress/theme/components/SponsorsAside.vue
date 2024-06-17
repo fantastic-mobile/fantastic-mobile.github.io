@@ -4,6 +4,12 @@
       作者其他作品
     </div>
     <div class="sponsor-container special">
+      <a href="https://hooray.github.io/fantastic-startkit/" target="_blank" class="sponsor-item">
+        <div class="info">
+          <div class="main">Fantastic-startkit</div>
+          <div class="sub">简单好用的 Vue3 项目启动套件</div>
+        </div>
+      </a>
       <a href="https://fantastic-admin.github.io/" target="_blank" class="sponsor-item">
         <img src="https://fantastic-admin.github.io/logo.png">
         <div class="info">

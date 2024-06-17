@@ -19,6 +19,10 @@
 
 除了可以在 Iconify 官网上查找搜需要的图标，你还可以在 [Icônes 网站](https://icones.js.org/) 上查找，这是一个基于 Iconify 的在线图标搜索网站，它比 Iconify 官网的操作更直观。
 
+![](/icones1.png){data-zoomable}
+
+![](/icones2.png){data-zoomable}
+
 ### Unocss 方案
 
 ::: tip 说明

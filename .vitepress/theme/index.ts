@@ -1,10 +1,12 @@
-import { h, toRefs } from 'vue'
-import Theme from 'vitepress/theme'
+import { h, nextTick, onMounted, toRefs, watch } from 'vue'
+import Theme, { VPBadge } from 'vitepress/theme'
 import giscusTalk from 'vitepress-plugin-comment-with-giscus'
 import { useData, useRoute } from 'vitepress'
 import './fonts/fira_code/fira_code.css'
 import './styles/var.css'
+import mediumZoom from 'medium-zoom'
 import SponsorsAside from './components/SponsorsAside.vue'
+import ZoomImg from './components/ZoomImg.vue'
 
 export default {
   ...Theme,
@@ -17,6 +19,15 @@ export default {
     // 获取前言和路由
     const { frontmatter } = toRefs(useData())
     const route = useRoute()
+
+    const initZoom = () => {
+      mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' })
+    }
+    onMounted(() => initZoom())
+    watch(
+      () => route.path,
+      () => nextTick(() => initZoom()),
+    )
 
     // 评论组件 - https://giscus.app/
     giscusTalk({
@@ -39,5 +50,9 @@ export default {
     // 如果为 false，表示不启用。
     // 可以在页面使用 `comment: true` 前言单独启用
     true)
+  },
+  enhanceApp({ app }) {
+    app.component('Badge', VPBadge)
+    app.component('ZoomImg', ZoomImg)
   },
 }

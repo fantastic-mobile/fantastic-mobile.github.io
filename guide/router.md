@@ -1,141 +1,115 @@
 # 路由
 
-路由实现了自动注册，路由配置存放在 `/src/router/modules/` 目录下，每一个 ts 文件会被视为一个路由模块，可参考 `/src/router/modules/example.ts` 文件。
+框架无需手动配置路由，而是基于文件系统自动生成路由，意味着开发者只需在 `/src/views/` 目录下创建文件，就会根据文件目录自动生成对应的路由，该能力由 [unplugin-vue-router](https://github.com/posva/unplugin-vue-router) 提供。
 
-更多使用技巧请移步至 Vue-router [官方文档](https://next.router.vuejs.org/zh/)。
+## 配置规范
 
-## 基于文件系统的路由
-
-> 该特性由 [vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages) 和 [vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts) 提供支持。
-
-传统使用路由的方式需要手动编写路由，而基于文件系统的路由则会根据文件的目录结构自动生成路由结构，从而节省开发周期。
-
-默认未开启该模式，如果需要启用，到 `/src/router/index.ts` 文件里找到下面代码片段，通过开启/关闭注释修改成下面这样：
-
-```ts {2-13,16-20}
-// 注释以下代码
-// const routesContext: any = import.meta.glob('./modules/*.ts', { eager: true })
-// Object.keys(routesContext).forEach((v) => {
-//   routes.push(routesContext[v].default)
-// })
-// routes.push({
-//   path: '/:pathMatch(.*)*',
-//   component: () => import('@/views/[...all].vue'),
-//   meta: {
-//     title: '找不到页面',
-//   },
-// })
-// routes = routes.flat()
-
-// 开启以下代码
-import { setupLayouts } from 'virtual:meta-layouts'
-import generatedRoutes from 'virtual:generated-pages'
-generatedRoutes.forEach(v => {
-    routes.push(v?.meta?.layout != false ? setupLayouts([v])[0] : v)
-})
-```
-
-启用基于文件系统的路由后，`/src/router/modules/` 目录将不再被需要，而 `/src/views/` 目录下的文件会自动被注册成路由。
+如果对 [unplugin-vue-router](https://github.com/posva/unplugin-vue-router) 的规范还不了解，建议先阅读官方文档。框架在此基础上，预设了一些规范。以下面的目录结构为例：
 
 ```
-文件系统                           路由地址                          路由 name
+目录结构                       路由地址                    路由 name
 
-views
-├─ example
-│    ├─ components
-│    │    └─ List
-│    │         └─ index.vue
-│    ├─ params
-│    │    └─ [id].vue              /example/params/:id              example-params
-│    ├─ axios.vue                  /example/axios                   example-axios
-│    ├─ cookie.vue                 /example/cookie                  example-cookie
-│    └─ svgicon.vue                /example/svgicon                 example-svgicon
-├─ [...all].vue                    /:all(.*)*                       all
-├─ index.vue                       /                                index
-└─ login.vue                       /login                           login
+src/views/
+├── _about
+│   └── index.vue
+├── example
+│   ├── _test.vue
+│   ├── components
+│   │   └── dialog.vue
+│   ├── svgicon.vue          /example/svgicon           /example/svgicon
+│   └── index.vue            /example                   /example/
+├── cart
+│   ├── detail
+│   │   └── [id].vue         /cart/detail/:id           /cart/detail/[id]
+│   └── index.vue            /cart                      /cart/
+├── news
+│   ├── detail.[id].vue      /news/detail/:id           /news/detail.[id]
+│   └── index.vue            /news                      /news/
+├── [...all].vue             /:all(.*)                  /[...all]
+├── index.vue                /                          /
+└── login.vue                /login                     /login
 ```
 
-通过上面的示例，可以看出几个特性：
+通过上面的示例，可以看出几个规范：
 
-- 使用路由参数需通过 `[ ]` 将参数名包裹，并设为文件名
-- 文件夹不会生成路由，例如 example 文件夹并没有生成 `/example` 路由
-- 路由 name 会根据文件的目录结构自动生成，并用 `-` 连接，可确保 name 的唯一性
-- 所有 components 目录均不会生成路由
+- 文件夹或文件名开头为 `_` 的不会生成路由
+- 所有 `components` 文件夹下的文件均不会生成路由
+- `index.vue` 文件会生成一个空路由，例如 `/src/views/news/index.vue` -> `/news` 路由
+- 路由参数通过 `[ ]` 将参数名包裹，例如 `/src/views/user_[id].vue` -> `/user_:id` 路由。设置可以添加多个参数 `/src/views/product_[skuId]_[seoDescription].vue`
+- 路由 name 默认为文件路径，也可通过 `definePage()` 在 `.vue` 文件内设置并覆盖
 
----
+::: warning 注意
+默认生成的路由可能为嵌套路由，但为了用一套 API 统一处理页面缓存，框架会将所有路由均处理成一级路由，并在 `App.vue` 里处理缓存逻辑。意味着如果同时创建 `/src/views/users/index.vue` 和 `/src/views/users.vue` 组件，`/src/views/users/index.vue` 不会在 `/src/views/users.vue` 的 `<RouterView>` 中呈现。
 
-默认生成的所有路由均为嵌套路由，父级 component 指向 `/src/layout/index.vue` 组件，即：
+这也意味着 `/src/views/users/detail/[id].vue` 和 `/src/views/users/detail.[id].vue` 生成的路由和行为都是一样的，只有路由 name 有区别。
 
-```ts
-// 生成的路由
-{
-  path: '/login',
-  component: () => import('/src/layout/index.vue'),
-  children: [
-    {
-      path: '',
-      component: () => import('/src/views/login.vue'),
-      name: 'login',
-      meta: {
-        layout: 'index',
-      },
-    },
-  ],
-}
-```
+这与 [unplugin-vue-router](https://github.com/posva/unplugin-vue-router) 默认行为略有不同。
+:::
 
-你可以在 SFC 单文件组件里设置 layout ：
+## definePage()
 
-```vue {1-4}
-<route lang="yaml">
-meta:
-  layout: example
-</route>
+通过 `definePage()` 可以修改路由对象或添加路由元信息：
 
-<template>
-  <div>login 页面</div>
-</template>
-```
-
-```ts {4,11}
-// 生成的路由
-{
-  path: '/login',
-  component: () => import('/src/layout/example.vue'),
-  children: [
-    {
-      path: '',
-      component: () => import('/src/views/login.vue'),
-      name: 'login',
-      meta: {
-        layout: 'example',
-      },
-    },
-  ],
-}
-```
-
-同样也可以设置成 `layout: false` ，这样该路由就不会生成嵌套路由。
-
-```vue {1-4}
-<route lang="yaml">
-meta:
-  layout: false
-</route>
-
-<template>
-  <div>login 页面</div>
-</template>
-```
-
-```ts
-// 生成的路由
-{
-  path: '/login',
-  component: () => import('/src/views/login.vue'),
-  name: 'login',
+```vue {2-7}
+<script setup lang="ts">
+definePage({
+  name: 'example',
   meta: {
-    layout: false,
+    title: '示例'
   },
-}
+})
+</script>
+
+<template>
+  <!-- ... -->
+</template>
 ```
+
+:::danger 警告
+不能在 `definePage()` 中使用变量，因为其传递的参数会在构建时提取并从 `<script setup>` 中删除。
+:::
+
+## 路由元信息
+
+### title
+
+|  类型  | 默认值 | 说明                     |
+| :----: | :----: | :----------------------- |
+| string |   /    | 浏览器及页面中展示的标题 |
+
+支持设置 i18n 对应的 key 值，详细可阅读《[国际化](i18n)》。
+
+### cache
+
+|            类型             | 默认值 | 说明                 |
+| :-------------------------: | :----: | :------------------- |
+| boolean / string / string[] |   /    | 是否对该页面进行缓存 |
+
+- `boolean` 设置为 true 时，该路由页面会被一直缓存
+- `string` 设置某个目标路由的 name ，表示当前路由页面跳转到设置的 name 对应的路由页面时，则将当前路由页面进行缓存，否则不缓存
+- `string[]` ，可设置一个目标路由的 name 数组
+
+当类型为 `string` 或 `string[]` 时，可以更精细的去控制页面缓存的逻辑。例如从列表页进入详情页，则需要将列表页进行缓存；而从列表页进入其它页面，则无需将列表页进行缓存。详细可阅读《[页面缓存](keep-alive)》。
+
+### noCache
+
+|       类型        | 默认值 | 说明                                        |
+| :---------------: | :----: | :------------------------------------------ |
+| string / string[] |   /    | 是否对该页面清除缓存，需设置 cache 才会生效 |
+
+- `string` 设置某个目标路由的 name ，表示当前路由页面跳转到设置的 name 对应的路由页面时，则将当前路由页面清除缓存，否则不清除缓存
+- `string[]` ，可设置一个目标路由的 name 数组
+
+该属性通常搭配 `cache: true` 使用，可以更精细的去控制页面取消缓存的逻辑。详细可阅读《[页面缓存](keep-alive)》。
+
+### auth
+
+|            类型             | 默认值 | 说明           |
+| :-------------------------: | :----: | :------------- |
+| boolean / string / string[] |   /    | 该路由访问权限 |
+
+- `boolean` 设置为 `true` 时，该路由仅登录用户可访问
+- `string` 设置某个权限的名称，表示当前路由仅允许具备该权限的用户可访问
+- `string[]` 设置多个权限的名称数组，表示当前路由允许具备其中一个权限的用户可访问
+
+当类型为 `string` 或 `string[]` 时，可以更精细的去控制页面权限，不具备访问权限则会显示 403 页面，详细可阅读《[权限 - 路由权限](permission#路由权限)》。

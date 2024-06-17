@@ -2,7 +2,7 @@
 
 ## 图片
 
-图片资源都放在 `/src/assets/images/` 目录下，可自行新建文件夹分类管理。
+框架用到的图片资源都放在 `/src/assets/images/` 目录下，可自行新建文件夹分类管理。
 
 ## 样式
 
@@ -18,7 +18,7 @@
 
 ## 组件
 
-### 全局组件
+### 公共组件
 
 ::: tip 说明
 公共组件在使用时，无需手动引入，框架会在你使用时自动引入，该特性由 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 提供支持。
