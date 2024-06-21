@@ -4,6 +4,30 @@ import { withBase } from 'vitepress'
 
 # 购买专业版
 
+:::details 专业版超值优惠合集①：Fantastic-mobile ＋ Fantastic-admin
+原价：￥599.00 <sup>Fantastic-mobile</sup> ＋ ￥1199.00 <sup>[Fantastic-admin](https://fantastic-admin.github.io)</sup> ＝ ￥1798.00
+
+合集优惠价：<b style="color: #ff4400;">￥<span style="font-size: 24px;">1099</span>.00</b> (本价格不参与任何限时优惠活动)
+
+请加作者微信进行购买
+:::
+
+:::details 专业版超值优惠合集②：Fantastic-mobile ＋ One-step-admin
+原价：￥599.00 <sup>Fantastic-mobile</sup> ＋ ￥999.00 <sup>[One-step-admin](https://one-step-admin.github.io)</sup> ＝ ￥1598.00
+
+合集优惠价：<b style="color: #ff4400;">￥<span style="font-size: 24px;">899</span>.00</b> (本价格不参与任何限时优惠活动)
+
+请加作者微信进行购买
+:::
+
+:::details 专业版超值优惠合集③：Fantastic-mobile ＋ Fantastic-admin ＋ One-step-admin
+原价：￥599.00 <sup>Fantastic-mobile</sup> ＋ ￥1199.00 <sup>[Fantastic-admin](https://fantastic-admin.github.io)</sup> ＋ ￥999.00 <sup>[One-step-admin](https://one-step-admin.github.io)</sup> ＝ ￥2797.00
+
+合集优惠价：<b style="color: #ff4400;">￥<span style="font-size: 24px;">1499</span>.00</b> (本价格不参与任何限时优惠活动)
+
+请加作者微信进行购买
+:::
+
 ## 购买流程
 
 1. 请先加作者微信进行在线咨询。
