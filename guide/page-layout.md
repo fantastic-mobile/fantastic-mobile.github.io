@@ -16,18 +16,21 @@
 
 ## Props
 
-| 参数                                               | 说明                                                                                     | 类型              | 可选值                                    | 默认值 |
-| :------------------------------------------------- | :--------------------------------------------------------------------------------------- | :---------------- | :---------------------------------------- | :----- |
-| titleCenter <Badge type="pro" text="专业版" />     | 导航栏标题是否居中                                                                       | boolean           | -                                         | true   |
-| navbar                                             | 是否启用导航栏，默认使用应用配置 `navbar.enable`                                         | boolean           | -                                         | -      |
-| navbarMode <Badge type="pro" text="专业版" />      | 导航栏模式，默认使用应用配置 `navbar.mode`                                               | string            | static / fixed / show-hide-fixed / sticky | -      |
-| navbarStartSide <Badge type="pro" text="专业版" /> | 从预设中设置展示在导航栏左侧的图标按钮                                                   | string / string[] | back / home / forward / i18n              | -      |
-| navbarEndSide <Badge type="pro" text="专业版" />   | 从预设中选择展示在导航栏右侧的图标按钮                                                   | string / string[] | back / home / forward / i18n              | -      |
-| tabbar                                             | 是否启用标签栏，默认使用应用配置 `tabbar.enable`                                         | boolean           | -                                         | -      |
-| tabbarName <Badge type="pro" text="专业版" />      | 标签栏名称，如果应用配置里配置了多套标签栏，需设置当前页面使用哪套标签栏，默认使用第一套 | string            | -                                         | -      |
-| copyright                                          | 是否展示底部版权信息，默认使用应用配置 `copyright.enable`                                | boolean           | -                                         | -      |
-| backTop                                            | 是否启用返回顶部按钮，默认使用应用配置 `app.enableBackTop`                               | boolean           | -                                         | -      |
-| savedPosition <Badge type="pro" text="专业版" />   | 是否记忆滚动位置（前提条件：需开启页面缓存）                                             | boolean           | -                                         | -      |
+| 参数                                                                                           | 说明                                                                                     | 类型              | 可选值                                    | 默认值 |
+| :--------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------- | :---------------- | :---------------------------------------- | :----- |
+| titleCenter <Badge type="pro" text="专业版" />                                                 | 导航栏标题是否居中                                                                       | boolean           | -                                         | true   |
+| navbar                                                                                         | 是否启用导航栏，默认使用应用配置 `navbar.enable`                                         | boolean           | -                                         | -      |
+| navbarMode <Badge type="pro" text="专业版" />                                                  | 导航栏模式，默认使用应用配置 `navbar.mode`                                               | string            | static / fixed / show-hide-fixed / sticky | -      |
+| navbarStartSide <Badge type="pro" text="专业版" />                                             | 从预设中设置展示在导航栏左侧的图标按钮                                                   | string / string[] | back / home / forward / i18n              | -      |
+| navbarEndSide <Badge type="pro" text="专业版" />                                               | 从预设中选择展示在导航栏右侧的图标按钮                                                   | string / string[] | back / home / forward / i18n              | -      |
+| tabbar                                                                                         | 是否启用标签栏，默认使用应用配置 `tabbar.enable`                                         | boolean           | -                                         | -      |
+| tabbarName <Badge type="pro" text="专业版" />                                                  | 标签栏名称，如果应用配置里配置了多套标签栏，需设置当前页面使用哪套标签栏，默认使用第一套 | string            | -                                         | -      |
+| copyright                                                                                      | 是否展示底部版权信息，默认使用应用配置 `copyright.enable`                                | boolean           | -                                         | -      |
+| backTop                                                                                        | 是否启用返回顶部按钮，默认使用应用配置 `app.enableBackTop`                               | boolean           | -                                         | -      |
+| savedPosition <Badge type="pro" text="专业版" />                                               | 是否记忆滚动位置（前提条件：需开启页面缓存）                                             | boolean           | -                                         | -      |
+| scrollTop <Badge type="pro" text="专业版" /> <Badge type="tip" text="v0.2.0 新增" />           | 设置竖向滚动条位置                                                                       | number            | -                                         | -      |
+| scrollLeft <Badge type="pro" text="专业版" /> <Badge type="tip" text="v0.2.0 新增" />          | 设置横向滚动条位置                                                                       | number            | -                                         | -      |
+| scrollWithAnimation <Badge type="pro" text="专业版" /> <Badge type="tip" text="v0.2.0 新增" /> | 是否在设置滚动条位置时使用动画过渡                                                       | boolean           | -                                         | -      |
 
 ## Slots
 
@@ -41,10 +44,11 @@
 
 ## Events
 
-| 事件名      | 说明                 |
-| :---------- | :------------------- |
-| scroll      | 页面滚动时触发       |
-| reachBottom | 页面滚动到底部时触发 |
+| 事件名                                              | 说明                 |
+| :-------------------------------------------------- | :------------------- |
+| scroll                                              | 页面滚动时触发       |
+| reachTop <Badge type="tip" text="v0.2.0 新增" />    | 页面滚动到顶部时触发 |
+| reachBottom <Badge type="tip" text="v0.2.0 新增" /> | 页面滚动到底部时触发 |
 
 ## 导航栏
 
