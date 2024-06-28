@@ -154,6 +154,30 @@ const globalSettings: Settings.all = {
 }
 ```
 
+## 哀悼模式 <Badge type="tip" text="v0.2.0 新增" />
+
+在应用配置中设置：
+
+```ts {2-9}
+const globalSettings: Settings.all = {
+  app: {
+    enableMournMode: true,
+  },
+}
+```
+
+## 色弱模式 <Badge type="tip" text="v0.2.0 新增" />
+
+在应用配置中设置：
+
+```ts {2-9}
+const globalSettings: Settings.all = {
+  app: {
+    enableColorAmblyopiaMode: true,
+  },
+}
+```
+
 ## 开发注意
 
 如果只在明亮或暗黑模式中，选择其中一种模式进行业务开发，那没有什么需要注意的，你可以按照以往的开发习惯进行开发，这也是框架推荐的方式。
