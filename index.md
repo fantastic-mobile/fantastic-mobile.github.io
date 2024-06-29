@@ -6,7 +6,7 @@ titleTemplate: 开箱即用的移动端 H5 框架
 
 hero:
   name: Fantastic-mobile
-  text: 自成一派的 H5 框架
+  text: 自成一派的 H5 框架📱
   tagline: 开箱即用，提供舒适开发体验
   image:
     src: /logo-with-shadow.png
