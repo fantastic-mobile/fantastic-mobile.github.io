@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as s,a5 as t}from"./chunks/framework.DJ1OgcvL.js";const k=JSON.parse('{"title":"路由","description":"","frontmatter":{},"headers":[],"relativePath":"guide/router.md","filePath":"guide/router.md"}'),n={name:"guide/router.md"},i=t("",28),l=[i];function p(d,c,h,r,o,g){return s(),a("div",null,l)}const E=e(n,[["render",p]]);export{k as __pageData,E as default};

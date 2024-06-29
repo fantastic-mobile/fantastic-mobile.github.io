@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a5 as t}from"./chunks/framework.DJ1OgcvL.js";const E=JSON.parse('{"title":"动态标题","description":"","frontmatter":{},"headers":[],"relativePath":"guide/title.md","filePath":"guide/title.md"}'),e={name:"guide/title.md"},n=t("",5),l=[n];function h(p,d,k,r,o,c){return a(),i("div",null,l)}const _=s(e,[["render",h]]);export{E as __pageData,_ as default};
