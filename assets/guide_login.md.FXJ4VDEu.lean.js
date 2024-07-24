@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as i,a6 as c}from"./chunks/framework.C653OLLi.js";const g=JSON.parse('{"title":"登录","description":"","frontmatter":{},"headers":[],"relativePath":"guide/login.md","filePath":"guide/login.md"}'),l={name:"guide/login.md"},t=c("",6),s=[t];function d(a,n,r,_,p,u){return i(),o("div",null,s)}const h=e(l,[["render",d]]);export{g as __pageData,h as default};
