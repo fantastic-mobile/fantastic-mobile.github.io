@@ -132,6 +132,6 @@ pnpm remove vant @vant/touch-emulator
 
 ## 示例
 
-如果对上述的步骤还有不清楚的地方，可以访问[此仓库](https://github.com/fantastic-mobile/varlet-example)查看示例源码，以及[此链接](https://fantastic-mobile.github.io/varlet-example/)查看示例网站。
+如果对上述的步骤还有不清楚的地方，可以访问[此仓库](https://github.com/fantastic-mobile/varlet-example)查看示例源码，以及[此链接](https://fantastic-mobile.hurui.me/varlet-example/)查看示例网站。
 
 ![](/ui-varlet.png){data-zoomable}

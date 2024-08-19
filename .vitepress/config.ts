@@ -19,7 +19,7 @@ _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
 }]);
 (function() {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?d93eb564371af3b9e7818f9ee32229e3";
+  hm.src = "https://hm.baidu.com/hm.js?d7f6dd1733b48011a6bf797914549256";
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(hm, s);
 })();
@@ -48,20 +48,15 @@ _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
         text: '在线演示',
         items: [
           {
-            text: 'Github',
-            items: [
-              {
-                text: '基础版',
-                link: 'https://fantastic-mobile.github.io/basic-example',
-              },
-              {
-                text: '专业版',
-                link: 'https://fantastic-mobile.github.io/pro-example',
-              },
-            ],
+            text: '基础版',
+            link: 'https://fantastic-mobile.hurui.me/basic-example',
           },
           {
-            text: 'Cloudflare',
+            text: '专业版',
+            link: 'https://fantastic-mobile.hurui.me/pro-example',
+          },
+          {
+            text: '备用地址',
             items: [
               {
                 text: '基础版',

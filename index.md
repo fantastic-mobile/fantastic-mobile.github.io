@@ -26,10 +26,10 @@ hero:
       link: /buy
     - theme: cta
       text: 演示地址：基础版 ↗
-      link: https://fantastic-mobile.github.io/basic-example
+      link: https://fantastic-mobile.hurui.me/basic-example
     - theme: cta
       text: 演示地址：专业版 ↗
-      link: https://fantastic-mobile.github.io/pro-example
+      link: https://fantastic-mobile.hurui.me/pro-example
 
 features:
 - icon: 💪

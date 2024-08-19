@@ -21,7 +21,7 @@
 
 内建组件存放在 `/src/ui-kit/` 目录下，并配置了使用时自动引入。
 
-你也可以点击 [基础版](https://fantastic-mobile.github.io/basic-example/#/component/built-in) 或 [专业版](https://fantastic-mobile.github.io/pro-example/#/component/built-in) 查看内建组件示例页面。
+你也可以点击 [基础版](https://fantastic-mobile.hurui.me/basic-example/#/component/built-in) 或 [专业版](https://fantastic-mobile.hurui.me/pro-example/#/component/built-in) 查看内建组件示例页面。
 
 ## 扩展组件
 
