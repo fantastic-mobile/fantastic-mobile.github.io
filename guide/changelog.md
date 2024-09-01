@@ -2,6 +2,45 @@
 
 只记录 feat/fix 以及破坏性变更。
 
+## 0.3.0
+
+:::info [基础版](https://github.com/fantastic-mobile/basic/releases/tag/v0.3.0)
+🚀 Features
+
+- 禁止缩放 &nbsp;-&nbsp; by @hooray [<samp>(826ce)</samp>](https://github.com/fantastic-mobile/basic/commit/826ce7b)
+- 禁用页面滑动回弹效果 &nbsp;-&nbsp; by @hooray [<samp>(e6f4d)</samp>](https://github.com/fantastic-mobile/basic/commit/e6f4d06)
+- 增加 VanFieldPicker 组件 &nbsp;-&nbsp; by @hooray [<samp>(7f094)</samp>](https://github.com/fantastic-mobile/basic/commit/7f094d4)
+- 扩充 unocss 自定义 shortcuts &nbsp;-&nbsp; by @hooray [<samp>(286bb)</samp>](https://github.com/fantastic-mobile/basic/commit/286bb3a)
+- SvgIcon 组件支持传入本地图片 &nbsp;-&nbsp; by @hooray [<samp>(230c7)</samp>](https://github.com/fantastic-mobile/basic/commit/230c77a)
+- 添加 VanFieldCalendar 组件 &nbsp;-&nbsp; by @hooray [<samp>(7fbfc)</samp>](https://github.com/fantastic-mobile/basic/commit/7fbfc92)
+- 添加 VanFieldDatePicker 组件 &nbsp;-&nbsp; by @hooray [<samp>(762b9)</samp>](https://github.com/fantastic-mobile/basic/commit/762b92a)
+- SvgIcon 组件使用网络图片时增加加载和失败状态 &nbsp;-&nbsp; by @hooray [<samp>(714e1)</samp>](https://github.com/fantastic-mobile/basic/commit/714e1c9)
+- 引入 postcss-nested &nbsp;-&nbsp; by @hooray [<samp>(606b8)</samp>](https://github.com/fantastic-mobile/basic/commit/606b8ef)
+
+🐞 Bug Fixes
+
+- 登录页登录按钮无反应 &nbsp;-&nbsp; by @hooray [<samp>(1a194)</samp>](https://github.com/fantastic-mobile/basic/commit/1a19498)
+:::
+
+:::tip [专业版](https://github.com/fantastic-mobile/pro/releases/tag/v0.3.0)
+🚀 Features
+
+- 禁止缩放 &nbsp;-&nbsp; by @hooray [<samp>(f39aa)</samp>](https://github.com/fantastic-mobile/pro/commit/f39aabd)
+- 禁用页面滑动回弹效果 &nbsp;-&nbsp; by @hooray [<samp>(b77ef)</samp>](https://github.com/fantastic-mobile/pro/commit/b77efc1)
+- 增加 VanFieldPicker 组件 &nbsp;-&nbsp; by @hooray [<samp>(b5368)</samp>](https://github.com/fantastic-mobile/pro/commit/b53688e)
+- 扩充 unocss 自定义 shortcuts &nbsp;-&nbsp; by @hooray [<samp>(33487)</samp>](https://github.com/fantastic-mobile/pro/commit/3348735)
+- SvgIcon 组件支持传入本地图片 &nbsp;-&nbsp; by @hooray [<samp>(29b29)</samp>](https://github.com/fantastic-mobile/pro/commit/29b290a)
+- 添加 VanFieldCalendar 组件 &nbsp;-&nbsp; by @hooray [<samp>(b01b0)</samp>](https://github.com/fantastic-mobile/pro/commit/b01b0ea)
+- 添加 VanFieldDatePicker 组件 &nbsp;-&nbsp; by @hooray [<samp>(00c12)</samp>](https://github.com/fantastic-mobile/pro/commit/00c1213)
+- SvgIcon 组件使用网络图片时增加加载和失败状态 &nbsp;-&nbsp; by @hooray [<samp>(6a689)</samp>](https://github.com/fantastic-mobile/pro/commit/6a689f8)
+- 引入 postcss-nested &nbsp;-&nbsp; by @hooray [<samp>(69f30)</samp>](https://github.com/fantastic-mobile/pro/commit/69f3063)
+
+🐞 Bug Fixes
+
+- 修复主题跟随系统且系统为明亮模式时，水印不生效 &nbsp;-&nbsp; by @hooray [<samp>(faaef)</samp>](https://github.com/fantastic-mobile/pro/commit/faaef14)
+- 登录页登录按钮无反应 &nbsp;-&nbsp; by @hooray [<samp>(3ccda)</samp>](https://github.com/fantastic-mobile/pro/commit/3ccda06)
+:::
+
 ## 0.2.0
 
 :::info [基础版](https://github.com/fantastic-mobile/basic/releases/tag/v0.2.0)
