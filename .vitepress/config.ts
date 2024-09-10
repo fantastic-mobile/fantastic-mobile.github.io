@@ -87,6 +87,23 @@ _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
           },
         ],
       },
+      {
+        text: '💖 友情推荐',
+        items: [
+          {
+            text: 'VForm 低代码表单',
+            link: 'https://www.vform666.com',
+          },
+          {
+            text: 'FormCreate 可视化表单设计器',
+            link: 'https://form-create.com',
+          },
+          {
+            text: '交换友链 ?',
+            link: '/links',
+          },
+        ],
+      },
     ],
     socialLinks: [
       {
