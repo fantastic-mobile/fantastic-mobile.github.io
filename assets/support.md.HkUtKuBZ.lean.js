@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t,a6 as r}from"./chunks/framework.Bhh1y9_T.js";const f=JSON.parse('{"title":"技术支持","description":"","frontmatter":{},"headers":[],"relativePath":"support.md","filePath":"support.md"}'),s={name:"support.md"},o=r("",6),i=[o];function l(n,c,_,h,p,u){return t(),a("div",null,i)}const m=e(s,[["render",l]]);export{f as __pageData,m as default};
