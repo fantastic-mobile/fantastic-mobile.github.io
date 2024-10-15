@@ -91,12 +91,8 @@ _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
         text: '💖 友情推荐',
         items: [
           {
-            text: 'VForm 低代码表单',
-            link: 'https://www.vform666.com',
-          },
-          {
-            text: 'FormCreate 可视化表单设计器',
-            link: 'https://form-create.com',
+            text: 'unibest 最好的 uniapp 开发框架',
+            link: 'https://codercup2.github.io/unibest-docs',
           },
           {
             text: '交换友链 ?',
