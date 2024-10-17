@@ -1,5 +1,5 @@
-import { defineConfig } from 'vitepress'
 import taskLists from 'markdown-it-task-lists'
+import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'Fantastic-mobile 官方文档',
@@ -195,7 +195,6 @@ _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
           text: '扩展组件',
           items: [
             { text: 'Auth 鉴权', link: '/components/auth' },
-            { text: 'AuthAll 鉴权', link: '/components/auth-all' },
             { text: 'PageMain 内容块', link: '/components/page-main' },
             { text: 'SvgIcon SVG图标', link: '/components/svg-icon' },
             { text: 'Trend 趋势标记', link: '/components/trend' },

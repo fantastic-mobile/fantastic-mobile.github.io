@@ -2,6 +2,38 @@
 
 只记录 feat/fix 以及破坏性变更。
 
+## 0.4.0
+
+:::info [基础版](https://github.com/fantastic-mobile/basic/releases/tag/v0.4.0)
+🚨 Breaking Changes
+
+- 重构鉴权指令、鉴权组件 &nbsp;-&nbsp; by @hooray [<samp>(451ed)</samp>](https://github.com/fantastic-mobile/basic/commit/451ed3d)
+
+🚀 Features
+
+- 引入 `@vitejs/plugin-legacy` 插件 &nbsp;-&nbsp; by @hooray [<samp>(8ee69)</samp>](https://github.com/fantastic-mobile/basic/commit/8ee69b1)
+
+🐞 Bug Fixes
+
+- 修复vscode无法校验css文件 &nbsp;-&nbsp; by @hooray [<samp>(ea542)</samp>](https://github.com/fantastic-mobile/basic/commit/ea54269)
+:::
+
+:::tip [专业版](https://github.com/fantastic-mobile/pro/releases/tag/v0.4.0)
+🚨 Breaking Changes
+
+- 使用 watermark-js-plus 重构水印功能 &nbsp;-&nbsp; by @hooray [<samp>(839c7)</samp>](https://github.com/fantastic-mobile/pro/commit/839c77c)
+- 重构鉴权指令、鉴权组件 &nbsp;-&nbsp; by @hooray [<samp>(e0514)</samp>](https://github.com/fantastic-mobile/pro/commit/e0514c9)
+
+🚀 Features
+
+- Dayjs 国际化跟随框架设置 &nbsp;-&nbsp; by @hooray [<samp>(4c1bc)</samp>](https://github.com/fantastic-mobile/pro/commit/4c1bc87)
+- 引入 `@vitejs/plugin-legacy` 插件 &nbsp;-&nbsp; by @hooray [<samp>(ac2f3)</samp>](https://github.com/fantastic-mobile/pro/commit/ac2f3ff)
+
+🐞 Bug Fixes
+
+- 修复vscode无法校验css文件 &nbsp;-&nbsp; by @hooray [<samp>(b739d)</samp>](https://github.com/fantastic-mobile/pro/commit/b739df6)
+:::
+
 ## 0.3.0
 
 :::info [基础版](https://github.com/fantastic-mobile/basic/releases/tag/v0.3.0)
