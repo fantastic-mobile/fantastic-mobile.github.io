@@ -2,6 +2,16 @@
 
 只记录 feat/fix 以及破坏性变更。
 
+## 0.4.1
+
+:::info [基础版](https://github.com/fantastic-mobile/basic/releases/tag/v0.4.1)
+无重大变化
+:::
+
+:::tip [专业版](https://github.com/fantastic-mobile/pro/releases/tag/v0.4.1)
+无重大变化
+:::
+
 ## 0.4.0
 
 :::info [基础版](https://github.com/fantastic-mobile/basic/releases/tag/v0.4.0)
