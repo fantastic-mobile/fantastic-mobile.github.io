@@ -18,7 +18,7 @@ pnpm add @nutui/nutui @nutui/touch-emulator
 
 ::: details 基础版
 
-整体修改 `/src/ui-provider/index.ts` 文件
+整体修改 `/src/ui/provider/index.ts` 文件
 
 ```ts
 import type { App } from 'vue'
@@ -33,13 +33,13 @@ function install(app: App) {
 export default { install }
 ```
 
-整体修改 `/src/ui-provider/index.vue` 文件
+整体修改 `/src/ui/provider/index.vue` 文件
 
 ```vue
 <script setup lang="ts">
+import useSettingsStore from '@/store/modules/settings'
 import { Locale } from '@nutui/nutui'
 import zhCN from '@nutui/nutui/dist/packages/locale/lang/zh-CN'
-import useSettingsStore from '@/store/modules/settings'
 
 const settingsStore = useSettingsStore()
 
@@ -57,15 +57,15 @@ Locale.use('zh-CN', zhCN)
 
 ::: details 专业版
 
-整体修改 `/src/ui-provider/index.ts` 文件
+整体修改 `/src/ui/provider/index.ts` 文件
 
 ```ts
 import type { App } from 'vue'
 import NutUI from '@nutui/nutui'
+import enUS from '@nutui/nutui/dist/packages/locale/lang/en-US'
+import zhCN from '@nutui/nutui/dist/packages/locale/lang/zh-CN'
 import '@nutui/nutui/dist/style.css'
 import '@nutui/touch-emulator'
-import zhCN from '@nutui/nutui/dist/packages/locale/lang/zh-CN'
-import enUS from '@nutui/nutui/dist/packages/locale/lang/en-US'
 
 function install(app: App) {
   app.use(NutUI)
@@ -81,13 +81,13 @@ export default { install }
 export { locales }
 ```
 
-整体修改 `/src/ui-provider/index.vue` 文件
+整体修改 `/src/ui/provider/index.vue` 文件
 
 ```vue
 <script setup lang="ts">
+import useSettingsStore from '@/store/modules/settings'
 import { Locale } from 'vant'
 import { locales } from './index'
-import useSettingsStore from '@/store/modules/settings'
 
 const settingsStore = useSettingsStore()
 
@@ -104,10 +104,6 @@ watch(() => settingsStore.lang, () => {
 ```
 
 :::
-
-## 修改登录页
-
-由于登录页使用了 Vant 组件，并且删除会导致框架无法正常使用，所以此处需要开发者自行修改或者重新制作登录页，或者也可以参考下方示例中已经修改好的登录页。
 
 ## 卸载
 

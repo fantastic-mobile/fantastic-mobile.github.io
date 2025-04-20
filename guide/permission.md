@@ -2,9 +2,13 @@
 
 在应用配置中设置：
 
-```ts {2-4}
+```ts {2-8}
 const globalSettings: Settings.all = {
   app: {
+    /**
+     * 是否开启权限功能
+     * @默认值 `false`
+     */
     enablePermission: true,
   },
 }
@@ -12,7 +16,7 @@ const globalSettings: Settings.all = {
 
 然后在 `/src/api/modules/user.ts` 文件里找到 `getPermissions` 的方法，该方法用于登录成功后获取用户权限。在实际开发中，需要手动进行修改，框架默认通过 mock 模拟获取用户权限。
 
-在演示源码中，默认提供了两组权限，你可以在“权限验证”导航里切换帐号查看不同权限下的效果。如果使用的不是 `admin` 或 `test` 用户名登录，则在导航栏里看不到“权限验证”导航入口。
+在演示源码中，默认提供了两组权限，你可以在“权限验证”导航里切换帐号查看不同权限下的效果。
 
 ## 路由权限
 
@@ -48,32 +52,32 @@ meta: {
 
 ## 鉴权组件
 
-页面中某个模块，当前用户具备该权限是如何显示，不具备该权限又是如何显示，针对这样的需求，框架提供了 `<Auth>` 组件。
+页面中某个模块，当前用户具备该权限是如何显示，不具备该权限又是如何显示，针对这样的需求，框架提供了 `<FmAuth>` 组件。
 
 ```vue-html
 <!-- 单权限验证 -->
-<Auth :value="'department.create'">
+<FmAuth :value="'department.create'">
   <p>你有该权限</p>
   <template #no-auth>
     <p>你没有该权限</p>
   </template>
-</Auth>
+</FmAuth>
 
 <!-- 多权限验证，用户只要具备其中任何一个权限，则验证通过 -->
-<Auth :value="['department.create', 'department.edit']">
+<FmAuth :value="['department.create', 'department.edit']">
   <p>你有该权限</p>
   <template #no-auth>
     <p>你没有该权限</p>
   </template>
-</Auth>
+</FmAuth>
 
 <!-- 多权限验证，用户必须具备全部权限，才验证通过 -->
-<Auth :value="['department.create', 'department.edit']" all>
+<FmAuth :value="['department.create', 'department.edit']" all>
   <p>你有该权限</p>
   <template #no-auth>
     <p>你没有该权限</p>
   </template>
-</Auth>
+</FmAuth>
 ```
 
 ## 鉴权函数

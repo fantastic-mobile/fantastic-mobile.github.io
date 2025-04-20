@@ -18,7 +18,7 @@ pnpm add @varlet/ui @varlet/touch-emulator
 
 ::: details 基础版
 
-整体修改 `/src/ui-provider/index.ts` 文件
+整体修改 `/src/ui/provider/index.ts` 文件
 
 ```ts
 import type { App } from 'vue'
@@ -33,12 +33,12 @@ function install(app: App) {
 export default { install }
 ```
 
-整体修改 `/src/ui-provider/index.vue` 文件
+整体修改 `/src/ui/provider/index.vue` 文件
 
 ```vue
 <script setup lang="ts">
-import { Locale, StyleProvider, Themes } from '@varlet/ui'
 import useSettingsStore from '@/store/modules/settings'
+import { Locale, StyleProvider, Themes } from '@varlet/ui'
 
 const settingsStore = useSettingsStore()
 
@@ -63,15 +63,15 @@ watch(() => settingsStore.currentColorScheme, (val) => {
 
 ::: details 专业版
 
-整体修改 `/src/ui-provider/index.ts` 文件
+整体修改 `/src/ui/provider/index.ts` 文件
 
 ```ts
 import type { App } from 'vue'
 import Varlet, { Locale } from '@varlet/ui'
-import '@varlet/ui/es/style'
-import '@varlet/touch-emulator'
 import enUS from 'vant/es/locale/lang/en-US'
 import zhCN from 'vant/es/locale/lang/zh-CN'
+import '@varlet/ui/es/style'
+import '@varlet/touch-emulator'
 
 function install(app: App) {
   app.use(Varlet)
@@ -87,12 +87,12 @@ export default { install }
 export { locales }
 ```
 
-整体修改 `/src/ui-provider/index.vue` 文件
+整体修改 `/src/ui/provider/index.vue` 文件
 
 ```vue
 <script setup lang="ts">
-import { locales } from './index'
 import useSettingsStore from '@/store/modules/settings'
+import { locales } from './index'
 
 const settingsStore = useSettingsStore()
 
@@ -114,10 +114,6 @@ watch(() => settingsStore.currentColorScheme, (val) => {
 ```
 
 :::
-
-## 修改登录页
-
-由于登录页使用了 Vant 组件，并且删除会导致框架无法正常使用，所以此处需要开发者自行修改或者重新制作登录页，或者也可以参考下方示例中已经修改好的登录页。
 
 ## 卸载
 

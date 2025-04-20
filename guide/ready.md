@@ -13,7 +13,7 @@
 
 到 [Github Releases](https://github.com/fantastic-mobile/basic/releases) 页面下载最新版本的压缩包，如下图所示：
 
-<!-- ![](/download.png){data-zoomable} -->
+![](/download.png){data-zoomable}
 
 或者也可以从 Github/Gitee 上拉取源码，但需要注意，直接拉取源码可能会包含未发布的内容，最终发布时可能会有变动，请谨慎使用。
 
@@ -43,10 +43,11 @@ git clone -b example https://gitee.com/fantastic-mobile/basic.git
 
 ## 开发环境
 
-使用本框架前，需要在本地依次安装好 [Node.js](https://nodejs.org/), [pnpm](https://pnpm.io/zh/), [Git](https://git-scm.com/)(非必须) 和 [Visual Studio Code](https://code.visualstudio.com/)。
+使用本模板前，需要在本地依次安装好 [Node.js](https://nodejs.org/), [pnpm](https://pnpm.io/zh/), [Git](https://git-scm.com/)(非必须) 和 [Visual Studio Code](https://code.visualstudio.com/)。
 
 ::: warning 注意
-在 [package.json](https://github.com/fantastic-mobile/basic/blob/main/package.json#L4-L6) 文件中有限制 node 要求版本，建议使用最新 LTS 版本。
+- 在 [package.json](https://github.com/fantastic-admin/basic/blob/main/package.json#L4-L6) 文件中有限制 node 要求版本，建议使用最新 LTS 版本。
+- 如果你不想使用 VSCode ，我们也强烈建议你使用基于 VSCode 内核的 IDE ，如 [Cursor](https://www.cursor.com/) 。
 :::
 
 然后在 Visual Studio Code 里安装好以下扩展：
@@ -78,6 +79,6 @@ git clone -b example https://gitee.com/fantastic-mobile/basic.git
 
 - [Vite](https://cn.vitejs.dev/)
 - [Vue 3](https://cn.vuejs.org/) ([v3 迁移指南](https://v3-migration.vuejs.org/))
-- [Vue Router](https://router.vuejs.org/zh/) ([unplugin-vue-router](https://github.com/posva/unplugin-vue-router) 基于文件的类型化路由)
+- [Vue Router](https://router.vuejs.org/zh/)
 - [Pinia](https://pinia.vuejs.org/zh/)
 - [UnoCSS](https://unocss.dev/)

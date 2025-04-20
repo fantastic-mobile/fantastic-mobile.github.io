@@ -2,142 +2,49 @@
 
 ## 框架主题
 
-主题配色存放在 `/themes/index.ts` 文件中，基础版和专业版内容略有不同。
+主题配色存放在 `/themes/index.ts` 文件中，基础版只提供了一套默认主题，在此不做过多介绍。
 
-### 基础版
-
-```ts
-import { hex2rgba } from '@unocss/preset-mini/utils'
-
-export const lightTheme = {
-  // 颜色主题
-  'color-scheme': 'light',
-  // 内置 UI
-  '--ui-primary': hex2rgba('#0f0f0f')!.join(' '),
-  '--ui-text': hex2rgba('#fcfcfc')!.join(' '),
-  // 主体
-  '--g-bg': '#f2f2f2',
-  '--g-container-bg': '#fff',
-  '--g-border-color': '#DCDFE6',
-  // 导航栏
-  '--g-navbar-bg': '#fff',
-  '--g-navbar-color': '#0f0f0f',
-  // 标签栏
-  '--g-tabbar-bg': '#fff',
-  '--g-tabbar-color': '#6f6f6f',
-  '--g-tabbar-active-color': '#0f0f0f',
-}
-
-export const darkTheme = {
-  // 颜色主题
-  'color-scheme': 'dark',
-  // 内置 UI
-  '--ui-primary': hex2rgba('#e5e5e5')!.join(' '),
-  '--ui-text': hex2rgba('#242b33')!.join(' '),
-  // 主体
-  '--g-bg': '#0a0a0a',
-  '--g-container-bg': '#141414',
-  '--g-border-color': '#15191e',
-  // 导航栏
-  '--g-navbar-bg': '#141414',
-  '--g-navbar-color': '#e5e5e5',
-  // 标签栏
-  '--g-tabbar-bg': '#141414',
-  '--g-tabbar-color': '#6f6f6f',
-  '--g-tabbar-active-color': '#e5e5e5',
-}
-```
-
-### 专业版
-
-与基础版不同，专业版默认提供了 12 款主题，明亮和暗黑模式各 6 款，并且主题在运行时共存，可实现动态切换。
-
-```ts
-import { hex2rgba } from '@unocss/preset-mini/utils'
-
-export default {
-  light: {
-    // 颜色主题
-    'color-scheme': 'light',
-    // 内置 UI
-    '--ui-primary': hex2rgba('#0f0f0f')!.join(' '),
-    '--ui-text': hex2rgba('#fcfcfc')!.join(' '),
-    // 主体
-    '--g-bg': '#f2f2f2',
-    '--g-container-bg': '#fff',
-    '--g-border-color': '#DCDFE6',
-    // 导航栏
-    '--g-navbar-bg': '#fff',
-    '--g-navbar-color': '#0f0f0f',
-    // 标签栏
-    '--g-tabbar-bg': '#fff',
-    '--g-tabbar-color': '#6f6f6f',
-    '--g-tabbar-active-color': '#0f0f0f',
-  },
-  ...
-  dark: {
-    // 颜色主题
-    'color-scheme': 'dark',
-    // 内置 UI
-    '--ui-primary': hex2rgba('#e5e5e5')!.join(' '),
-    '--ui-text': hex2rgba('#242b33')!.join(' '),
-    // 主体
-    '--g-bg': '#0a0a0a',
-    '--g-container-bg': '#141414',
-    '--g-border-color': '#15191e',
-    // 导航栏
-    '--g-navbar-bg': '#141414',
-    '--g-navbar-color': '#e5e5e5',
-    // 标签栏
-    '--g-tabbar-bg': '#141414',
-    '--g-tabbar-color': '#6f6f6f',
-    '--g-tabbar-active-color': '#e5e5e5',
-  },
-  ...
-}
-```
-
-![](/theme.gif){data-zoomable}
-
-如果框架提供的主题风格满足不了你的需求，你还可以自定义新的主题。
-
-```ts
-import { hex2rgba } from '@unocss/preset-mini/utils'
-
-export default {
-  newThemeName: { // 主题名称
-    // 颜色主题
-    'color-scheme': 'light',
-    // 内置 UI
-    '--ui-primary': hex2rgba('#0f0f0f')!.join(' '),
-    '--ui-text': hex2rgba('#fcfcfc')!.join(' '),
-    // 主体
-    '--g-bg': '#f2f2f2',
-    '--g-container-bg': '#fff',
-    '--g-border-color': '#DCDFE6',
-    // 导航栏
-    '--g-navbar-bg': '#fff',
-    '--g-navbar-color': '#0f0f0f',
-    // 标签栏
-    '--g-tabbar-bg': '#fff',
-    '--g-tabbar-color': '#6f6f6f',
-    '--g-tabbar-active-color': '#0f0f0f',
-  },
-}
-```
-
-最后在应用配置中使用该主题：
-
-```ts {2-5}
-const globalSettings: Settings.all = {
-  app: {
-    // 如果主题是暗黑模式下使用的，则 darkTheme: 'newThemeName'
-    lightTheme: 'newThemeName',
-  },
-}
-```
+<Badge type="pro" text="专业版" /> 提供了 8 套主题，每套主题都支持明亮和暗黑两种模式，并且主题支持在运行时共存，可实现动态切换。
 
 ## 颜色方案
+
+在应用配置中设置：
+
+```ts {2-10}
+const globalSettings: Settings.all = {
+  app: {
+    /**
+     * 颜色方案
+     * @默认值 `'light'` 明亮模式
+     * @可选值 `'dark'` 暗黑模式
+     * @可选值 `''` 跟随系统
+     */
+    colorScheme: '',
+  },
+}
+```
+
+当设置为 `''` 时，将跟随系统。
+
+## 主题同步 <Badge type="pro" text="专业版" />
+
+在应用配置中设置：
+
+```ts {2-8}
+const globalSettings: Settings.all = {
+  app: {
+    /**
+     * 主题同步，当开启时，切换颜色方案将共用一套主题
+     * @默认值 `true`
+     */
+    themeSync: true,
+  },
+}
+```
+
+由于一套主题分别有明亮和暗黑两种模式，开启时将共用一套主题，关闭后可以分别设置明亮和暗黑模式的主题。
+
+## 圆角系数
 
 在应用配置中设置：
 
@@ -145,35 +52,61 @@ const globalSettings: Settings.all = {
 const globalSettings: Settings.all = {
   app: {
     /**
-     * 留空跟随系统
-     * light 明亮模式
-     * dark 暗黑模式
+     * 圆角系数
+     * @默认值 `0.5`
+     * @可选值 `0到1区间的任意值`
      */
-    colorScheme: '',
+    radius: 0.5,
   },
 }
 ```
 
-## 哀悼模式 <Badge type="tip" text="v0.2.0 新增" />
+该设置会影响到框架中所有圆角组件的圆角系数，例如按钮、卡片、弹窗等。
+
+## 哀悼模式
 
 在应用配置中设置：
 
-```ts {2-9}
+```ts {2-8}
 const globalSettings: Settings.all = {
   app: {
+    /**
+     * 是否开启哀悼模式
+     * @默认值 `false`
+     */
     enableMournMode: true,
   },
 }
 ```
 
-## 色弱模式 <Badge type="tip" text="v0.2.0 新增" />
+## 色弱模式
 
 在应用配置中设置：
 
-```ts {2-9}
+```ts {2-8}
 const globalSettings: Settings.all = {
   app: {
+    /**
+     * 是否开启色弱模式
+     * @默认值 `false`
+     */
     enableColorAmblyopiaMode: true,
+  },
+}
+```
+
+## 载入进度条
+
+在应用配置中设置：
+
+```ts {2-8}
+const globalSettings: Settings.all = {
+  app: {
+    /**
+     * 是否开启载入进度条
+     * @默认值 `true`
+     */
+    enableProgress: true
   },
 }
 ```

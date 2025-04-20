@@ -1,54 +1,204 @@
-# PageLayout 组件
+# 页面布局
 
-`<PageLayout>` 组件是本框架区别于其他 H5 框架的最重要的特性。它提供了页面整体布局的基础，包括顶部导航栏、顶部标签栏、返回顶部、记录滚动位置等特性。
+`<FmPageLayout>` 页面布局组件是本框架区别于其他 H5 框架的最重要的特性。它提供了页面整体布局的基础，包括顶部导航栏、顶部标签栏、返回顶部、记录滚动位置等特性。
 
 ## 基本用法
 
 ```vue
 <template>
-  <PageLayout :navbar="false" tabbar copyright>
+  <FmPageLayout :navbar="false" tabbar copyright>
     <!-- ... -->
-  </PageLayout>
+  </FmPageLayout>
 </template>
 ```
 
-本组件不是一个可以随处使用的组件，它必须应用在根节点，并且一个页面里只能有一个 `<PageLayout>` 组件。
+本组件不是一个可以随处使用的组件，它必须应用在根节点，并且一个页面里只能有一个 `<FmPageLayout>` 组件。
 
 ## Props
 
-| 参数                                                                                           | 说明                                                                                     | 类型              | 可选值                                     | 默认值 |
-| :--------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------- | :---------------- | :----------------------------------------- | :----- |
-| titleCenter <Badge type="pro" text="专业版" />                                                 | 导航栏标题是否居中                                                                       | boolean           | -                                          | true   |
-| navbar                                                                                         | 是否启用导航栏，默认使用应用配置 `navbar.enable`                                         | boolean           | -                                          | -      |
-| navbarMode <Badge type="pro" text="专业版" />                                                  | 导航栏模式，默认使用应用配置 `navbar.mode`                                               | string            | static / fixed / show-hide-fixed / sticky  | -      |
-| navbarStartSide <Badge type="pro" text="专业版" />                                             | 从预设中设置展示在导航栏左侧的图标按钮                                                   | string / string[] | back / home / forward / i18n / colorScheme | -      |
-| navbarEndSide <Badge type="pro" text="专业版" />                                               | 从预设中选择展示在导航栏右侧的图标按钮                                                   | string / string[] | back / home / forward / i18n / colorScheme | -      |
-| tabbar                                                                                         | 是否启用标签栏，默认使用应用配置 `tabbar.enable`                                         | boolean           | -                                          | -      |
-| tabbarName <Badge type="pro" text="专业版" />                                                  | 标签栏名称，如果应用配置里配置了多套标签栏，需设置当前页面使用哪套标签栏，默认使用第一套 | string            | -                                          | -      |
-| copyright                                                                                      | 是否展示底部版权信息，默认使用应用配置 `copyright.enable`                                | boolean           | -                                          | -      |
-| backTop                                                                                        | 是否启用返回顶部按钮，默认使用应用配置 `app.enableBackTop`                               | boolean           | -                                          | -      |
-| savedPosition <Badge type="pro" text="专业版" />                                               | 是否记忆滚动位置（前提条件：需开启页面缓存）                                             | boolean           | -                                          | -      |
-| scrollTop <Badge type="pro" text="专业版" /> <Badge type="tip" text="v0.2.0 新增" />           | 设置竖向滚动条位置                                                                       | number            | -                                          | -      |
-| scrollLeft <Badge type="pro" text="专业版" /> <Badge type="tip" text="v0.2.0 新增" />          | 设置横向滚动条位置                                                                       | number            | -                                          | -      |
-| scrollWithAnimation <Badge type="pro" text="专业版" /> <Badge type="tip" text="v0.2.0 新增" /> | 是否在设置滚动条位置时使用动画过渡                                                       | boolean           | -                                          | -      |
+### titleCenter <Badge type="pro" text="专业版" />
+
+- 类型：`boolean`
+- 默认值：`true`
+- 说明：导航栏标题是否居中
+
+### navbar
+
+- 类型：`boolean`
+- 默认值：`undefined`
+- 说明：是否启用导航栏，默认使用应用配置 `navbar.enable`
+
+### navbarMode <Badge type="pro" text="专业版" />
+
+- 类型：`'fixed' | 'static' | 'show-hide-fixed' | 'sticky'`
+- 默认值：`undefined`
+- 说明：导航栏模式，默认使用应用配置 `navbar.mode`
+
+### navbarStartSide <Badge type="pro" text="专业版" />
+
+- 类型：`navbarSideOptions | navbarSideOptions[]`
+- 默认值：`undefined`
+- 说明：从预设中设置展示在导航栏左侧的图标按钮
+
+```ts
+type navbarSideOptions = 'back' | 'home' | 'forward' | 'i18n' | 'colorScheme'
+```
+
+### navbarEndSide <Badge type="pro" text="专业版" />
+
+- 类型：`navbarSideOptions | navbarSideOptions[]`
+- 默认值：`undefined`
+- 说明：从预设中设置展示在导航栏右侧的图标按钮
+
+```ts
+type navbarSideOptions = 'back' | 'home' | 'forward' | 'i18n' | 'colorScheme'
+```
+
+### navbarBorder
+
+- 类型：`boolean`
+- 默认值：`true`
+- 说明：是否启用导航栏边框
+
+### navbarRadius <Badge type="pro" text="专业版" />
+
+- 类型：`boolean`
+- 默认值：`false`
+- 说明：是否启用导航栏圆角
+
+### navbarMask <Badge type="pro" text="专业版" />
+
+- 类型：`boolean`
+- 默认值：`false`
+- 说明：是否启用导航栏渐变遮罩
+
+### navbarClass
+
+- 类型：`string`
+- 默认值：`undefined`
+- 说明：导航栏自定义类名
+
+### tabbar
+
+- 类型：`boolean`
+- 默认值：`undefined`
+- 说明：是否启用标签栏，默认使用应用配置 `tabbar.enable`
+
+### tabbarMode <Badge type="pro" text="专业版" />
+
+- 类型：`'fixed' | 'sticky'`
+- 默认值：`undefined`
+- 说明：标签栏模式，默认使用应用配置 `tabbar.mode`
+
+### tabbarName <Badge type="pro" text="专业版" />
+
+- 类型：`string`
+- 默认值：`undefined`
+- 说明：标签栏名称，如果应用配置里配置了多套标签栏，需设置当前页面使用哪套标签栏，默认使用第一套
+
+### tabbarBorder
+
+- 类型：`boolean`
+- 默认值：`true`
+- 说明：是否启用标签栏边框
+
+### tabbarRadius <Badge type="pro" text="专业版" />
+
+- 类型：`boolean`
+- 默认值：`false`
+- 说明：是否启用标签栏圆角
+
+### tabbarMask <Badge type="pro" text="专业版" />
+
+- 类型：`boolean`
+- 默认值：`false`
+- 说明：是否启用标签栏渐变遮罩
+
+### tabbarClass
+
+- 类型：`string`
+- 默认值：`undefined`
+- 说明：标签栏自定义类名
+
+### copyright
+
+- 类型：`boolean`
+- 默认值：`undefined`
+- 说明：是否展示底部版权信息，默认使用应用配置 `copyright.enable`
+
+### backTop
+
+- 类型：`boolean`
+- 默认值：`undefined`
+- 说明：是否启用返回顶部按钮，默认使用应用配置 `app.enableBackTop`
+
+### savedPosition <Badge type="pro" text="专业版" />
+
+- 类型：`boolean`
+- 默认值：`undefined`
+- 说明：是否记忆滚动位置（前提条件：需开启页面缓存）
+
+### scrollTop <Badge type="pro" text="专业版" />
+
+- 类型：`number`
+- 默认值：`undefined`
+- 说明：设置竖向滚动条位置
+
+### scrollLeft <Badge type="pro" text="专业版" />
+
+- 类型：`number`
+- 默认值：`undefined`
+- 说明：设置横向滚动条位置
+
+### scrollWithAnimation <Badge type="pro" text="专业版" />
+
+- 类型：`boolean`
+- 默认值：`undefined`
+- 说明：是否在设置滚动条位置时使用动画过渡
 
 ## Slots
 
-| 插槽名       | 说明               |
-| :----------- | :----------------- |
-| -            | 页面区域           |
-| navbar       | 导航栏标题区域     |
-| navbar-start | 导航栏左侧图标区域 |
-| navbar-end   | 导航栏右侧图标区域 |
-| tabbar       | 标签栏区域         |
+### default
+
+页面内容区域
+
+### navbar
+
+导航栏标题区域
+
+### navbar-start
+
+导航栏左侧图标区域
+
+### navbar-end
+
+导航栏右侧图标区域
+
+### navbar-extra <Badge type="pro" text="专业版" />
+
+导航栏下方额外区域
+
+### tabbar
+
+标签栏区域
+
+### tabbar-extra <Badge type="pro" text="专业版" />
+
+标签栏下方额外区域
 
 ## Events
 
-| 事件名                                              | 说明                 |
-| :-------------------------------------------------- | :------------------- |
-| scroll                                              | 页面滚动时触发       |
-| reachTop <Badge type="tip" text="v0.2.0 新增" />    | 页面滚动到顶部时触发 |
-| reachBottom <Badge type="tip" text="v0.2.0 新增" /> | 页面滚动到底部时触发 |
+### scroll
+
+页面滚动时触发
+
+### reachTop
+
+页面滚动到顶部时触发
+
+### reachBottom
+
+页面滚动到底部时触发
 
 ## 导航栏
 
@@ -76,10 +226,10 @@ const globalSettings: Settings.all = {
 
 ### mode <Badge type="pro" text="专业版" />
 
-全局设置导航栏模式，默认为 `static`
+全局设置导航栏模式，默认为 `fixed`
 
-- `'static'` 静止，跟随页面滚动
 - `'fixed'` 固定，不跟随页面滚动，始终固定在顶部
+- `'static'` 静止，跟随页面滚动
 - `'show-hide-fixed'` 显隐固定，默认隐藏，页面滚动时显示
 - `'sticky'` 粘性，页面往下滚动时隐藏，往上滚动时显示
 
@@ -101,6 +251,21 @@ const globalSettings: Settings.all = {
 const globalSettings: Settings.all = {
   tabbar: {
     enable: true,
+  },
+}
+```
+
+### mode <Badge type="pro" text="专业版" />
+
+全局设置标签栏模式，默认为 `fixed`
+
+- `'fixed'` 固定，不跟随页面滚动，始终固定在底部
+- `'sticky'` 粘性，页面往下滚动时隐藏，往上滚动时显示
+
+```ts {2-4}
+const globalSettings: Settings.all = {
+  tabbar: {
+    mode: 'sticky',
   },
 }
 ```
@@ -171,9 +336,9 @@ const globalSettings: Settings.all = {
 
 ```vue {2}
 <template>
-  <PageLayout tabbar-name="tabbar2">
+  <FmPageLayout tabbar-name="tabbar2">
     <!-- ... -->
-  </PageLayout>
+  </FmPageLayout>
 </template>
 ```
 
@@ -191,7 +356,7 @@ const globalSettings: Settings.all = {
 | :----: | :----: | :------- |
 | string |   /    | 显示图标 |
 
-该项配置最终会通过 `<SvgIcon />` 组件进行展示，意味着你可以使用自定义图标，也可使用 Iconify 提供的图标，详细可阅读《[图标](./svg-icon)》。
+该项配置最终会通过 `<FmIcon />` 组件进行展示，意味着你可以使用自定义图标，也可使用 Iconify 提供的图标，详细可阅读《[图标](./icon)》。
 
 #### activeIcon <Badge type="pro" text="专业版" />
 
@@ -199,7 +364,7 @@ const globalSettings: Settings.all = {
 | :----: | :----: | :------------- |
 | string |   /    | 激活时显示图标 |
 
-该项配置最终会通过 `<SvgIcon />` 组件进行展示，意味着你可以使用自定义图标，也可使用 Iconify 提供的图标，详细可阅读《[图标](./svg-icon)》。
+该项配置最终会通过 `<FmIcon />` 组件进行展示，意味着你可以使用自定义图标，也可使用 Iconify 提供的图标，详细可阅读《[图标](./icon)》。
 
 #### text
 

@@ -13,9 +13,8 @@ Fantastic-mobile 与市面上大部分移动端 H5 模板不同之处在于，�
 - [vue3-vant-mobile](https://github.com/easy-temps/vue3-vant-mobile)
 - [vue3-vant4-mobile](https://github.com/xiangshu233/vue3-vant4-mobile)
 - [vue3-h5-template](https://github.com/yulimchen/vue3-h5-template)
+- [MobVue](https://github.com/un-pany/mobvue)
 
-以上 3 款模板都很成熟，也是社区内人气较高的项目。但正如上面所说，**Fantastic-mobile 从一开始就不打算仅仅只是做一个 H5 模版**。所以，如果你正在做技术选型，不如先了解一下我们这款框架，再决定是否要继续使用其他 H5 模板。
+以上几款模板都很成熟，也是社区内人气较高的项目。但正如上面所说，**Fantastic-mobile 从一开始就不打算仅仅只是做一个 H5 模版**。所以，如果你正在做技术选型，不如先了解一下我们这款框架，再决定是否要继续使用其他 H5 模板。
 
-并且你不需要担心技术栈上的差异，因为 Vue3 整体的生态已经非常成熟，几乎形成了一套社区默认的技术栈。也就是说，以上 3 款模板和 Fantastic-mobile 使用到的技术栈，几乎是一样的。
-
-用一句简单的话概括就是：**人无我有，人有我优**。
+并且你不需要担心技术栈上的差异，因为 Vue3 整体的生态已经非常成熟，几乎形成了一套社区默认的技术栈。也就是说，以上几款模板和 Fantastic-mobile 使用到的技术栈，几乎是一样的。

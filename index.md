@@ -22,7 +22,7 @@ hero:
       text: 更新日志
       link: /guide/changelog
     - theme: cta buy
-      text: 专业版，限时优惠价 369 元
+      text: 专业版，限时优惠价 399 元
       link: /buy
     - theme: cta
       text: 演示地址：基础版 ↗
