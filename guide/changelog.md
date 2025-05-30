@@ -2,6 +2,21 @@
 
 只记录 feat/fix 以及破坏性变更。
 
+## 1.1.0
+
+:::info [基础版](https://github.com/fantastic-mobile/basic/releases/tag/v1.1.0)
+🚀 Features
+
+- 增加请求重试机制 &nbsp;-&nbsp; by @hooray [<samp>(6e7db)</samp>](https://github.com/fantastic-mobile/basic/commit/6e7db81)
+:::
+
+:::tip [专业版](https://github.com/fantastic-mobile/pro/releases/tag/v1.1.0)
+🚀 Features
+
+- 新增 `FmTimeline` 组件 &nbsp;-&nbsp; by @hooray [<samp>(d1d5f)</samp>](https://github.com/fantastic-mobile/pro/commit/d1d5f52)
+- 增加请求重试机制 &nbsp;-&nbsp; by @hooray [<samp>(5cf84)</samp>](https://github.com/fantastic-mobile/pro/commit/5cf84c2)
+:::
+
 ## 1.0.0
 
 **此版本有较多破坏性的变更，如果打算从 v0.x 升级，请仔细阅读并谨慎迁移代码。**
@@ -12,14 +27,6 @@
 - 登录页使用内建组件进行重构，不再依赖 `vant` ，更方便迁移其他 UI 组件库
 - 新增 `app.themeSync` 应用设置
 - `FmPageLayout` props/slots 调整
-
-<!-- :::info [基础版](https://github.com/fantastic-mobile/basic/releases/tag/v0.4.1)
-无重大变化
-:::
-
-:::tip [专业版](https://github.com/fantastic-mobile/pro/releases/tag/v0.4.1)
-无重大变化
-::: -->
 
 ## v0.x
 
