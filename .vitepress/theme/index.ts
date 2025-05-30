@@ -1,12 +1,12 @@
-import { h, nextTick, onMounted, toRefs, watch } from 'vue'
-import Theme, { VPBadge } from 'vitepress/theme'
-import giscusTalk from 'vitepress-plugin-comment-with-giscus'
-import { useData, useRoute } from 'vitepress'
-import './fonts/fira_code/fira_code.css'
-import './styles/var.css'
 import mediumZoom from 'medium-zoom'
+import { useData, useRoute } from 'vitepress'
+import giscusTalk from 'vitepress-plugin-comment-with-giscus'
+import Theme, { VPBadge } from 'vitepress/theme'
+import { h, nextTick, onMounted, toRefs, watch } from 'vue'
 import SponsorsAside from './components/SponsorsAside.vue'
 import ZoomImg from './components/ZoomImg.vue'
+import './fonts/fira_code/fira_code.css'
+import './styles/var.css'
 
 export default {
   ...Theme,
