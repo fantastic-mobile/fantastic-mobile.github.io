@@ -226,6 +226,7 @@ _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
             { text: 'FmLoading 加载遮罩', link: '/components/fm-loading' },
             { text: 'FmMarquee 跑马灯', link: '/components/fm-marquee' },
             { text: 'FmModal 弹窗', link: '/components/fm-modal' },
+            { text: 'FmMultiStepLoader 多步骤加载器', link: '/components/fm-multi-step-loader' },
             { text: 'FmPageMain 内容块', link: '/components/fm-page-main' },
             { text: 'FmParticlesBg 粒子背景', link: '/components/fm-particles-bg' },
             { text: 'FmPatternBg 图案背景', link: '/components/fm-pattern-bg' },
