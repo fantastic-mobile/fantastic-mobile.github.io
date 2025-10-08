@@ -1,0 +1,1 @@
+import{l as e,c as t,b as r,a4 as o}from"./chunks/framework.gRbM0Ghu.js";const d=JSON.parse('{"title":"技术支持","description":"","frontmatter":{},"headers":[],"relativePath":"support.md","filePath":"support.md"}'),i={name:"support.md"};function s(l,a,n,p,h,c){return r(),t("div",null,[...a[0]||(a[0]=[o("",19)])])}const b=e(i,[["render",s]]);export{d as __pageData,b as default};
