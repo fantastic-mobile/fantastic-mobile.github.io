@@ -1,0 +1,1 @@
+import{l as e,a as t,c as r,Q as o}from"./chunks/framework.DMaP2wjQ.js";const c=JSON.parse('{"title":"技术支持","description":"","frontmatter":{},"headers":[],"relativePath":"support.md","filePath":"support.md"}'),i={name:"support.md"};function s(n,a,l,p,h,d){return t(),r("div",null,[...a[0]||(a[0]=[o("",20)])])}const b=e(i,[["render",s]]);export{c as __pageData,b as default};

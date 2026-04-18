@@ -1,0 +1,121 @@
+# Fantastic-mobile
+
+> 自成一派的 H5 框架📱
+
+开箱即用，提供舒适开发体验
+
+## Table of Contents
+
+### 指引
+
+- [文档说明](/guide/intro.md)
+- [为什么选择我们 ?](/guide/why.md)
+- [更新日志](/guide/changelog.md)
+
+### AI 技能 (Skills)
+
+- [AI 技能 (Skills)](/guide/skills.md)
+- [fm-framework-settings](/guide/skills/fm-framework-settings.md)
+- [fm-i18n-manager&#x20;](/guide/skills/fm-i18n-manager.md)
+- [fm-page-optimizer](/guide/skills/fm-page-optimizer.md)
+- [fm-store-generator](/guide/skills/fm-store-generator.md)
+- [fm-theme-customizer](/guide/skills/fm-theme-customizer.md)
+
+### 入门
+
+- [准备工作](/guide/ready.md)
+- [开始](/guide/start.md)
+- [代码规范](/guide/coding-standard.md)
+- [配置](/guide/configure.md)
+- [开发者工具](/guide/devtools.md)
+- [路由](/guide/router.md)
+- [与服务端交互](/guide/axios.md)
+- [全局状态管理](/guide/store.md)
+- [资源](/guide/resources.md)
+- [图标](/guide/icon.md)
+- [构建与预览](/guide/build.md)
+
+### 进阶
+
+- [浏览器适配](/guide/viewport.md)
+- [页面布局](/guide/page-layout.md)
+- [登录](/guide/login.md)
+- [权限认证](/guide/auth.md)
+- [主题](/guide/theme.md)
+- [动态标题](/guide/title.md)
+
+### 高级
+
+- [页面保活](/guide/keep-alive.md)
+- [国际化&#x20;](/guide/i18n.md)
+- [常用 API](/guide/api.md)
+- [私有 Storage 数据&#x20;](/guide/storage.md)
+- [页面水印&#x20;](/guide/watermark.md)
+- [错误日志&#x20;](/guide/error-log.md)
+- [自定义字体&#x20;](/guide/font.md)
+- [其他 UI 组件库](/guide/other-ui.md)
+- [Composition API](/guide/composition-api.md)
+
+### 其它
+
+- [框架更新](/guide/upgrade.md)
+- [常见问题](/guide/q-a.md)
+
+### 内建组件
+
+- [FmAnimatedCountTo 数字动画](/components/FmAnimatedCountTo.md)
+- [FmAnimatedCountToGroup 数字动画组](/components/FmAnimatedCountToGroup.md)
+- [FmAvatar 头像组件](/components/FmAvatar.md)
+- [FmBadge 徽章组件](/components/FmBadge.md)
+- [FmBlurReveal 模糊显现](/components/FmBlurReveal.md)
+- [FmBorderBeam 边框光束](/components/FmBorderBeam.md)
+- [FmButton 按钮组件](/components/FmButton.md)
+- [FmButtonGroup 按钮组](/components/FmButtonGroup.md)
+- [FmCard 卡片组件](/components/FmCard.md)
+- [FmCheckbox 复选框组件](/components/FmCheckbox.md)
+- [FmCode 代码块](/components/FmCode.md)
+- [FmCodePreview 代码预览](/components/FmCodePreview.md)
+- [FmCountTo 数字滚动组件](/components/FmCountTo.md)
+- [FmDigitalCard 数字卡片](/components/FmDigitalCard.md)
+- [FmDivider 分割线组件](/components/FmDivider.md)
+- [FmDrawer 抽屉组件](/components/FmDrawer.md)
+- [FmEmpty 空状态组件](/components/FmEmpty.md)
+- [FmFlipWords 翻转文字](/components/FmFlipWords.md)
+- [FmGradientButton 渐变按钮](/components/FmGradientButton.md)
+- [FmIcon 图标组件](/components/FmIcon.md)
+- [FmInput 输入框组件](/components/FmInput.md)
+- [FmLoading 加载动画](/components/FmLoading.md)
+- [FmMarquee 滚动横幅](/components/FmMarquee.md)
+- [FmModal 对话框组件](/components/FmModal.md)
+- [FmMultiStepLoader 多步骤加载器](/components/FmMultiStepLoader.md)
+- [FmPageMain 页面主内容区组件](/components/FmPageMain.md)
+- [FmParticlesBg 粒子背景](/components/FmParticlesBg.md)
+- [FmPatternBg 图案背景](/components/FmPatternBg.md)
+- [FmQrcode 二维码组件](/components/FmQrcode.md)
+- [FmScratchOff 刮刮乐](/components/FmScratchOff.md)
+- [FmScrollArea 滚动区域组件](/components/FmScrollArea.md)
+- [FmScrollingText 滚动文字组件](/components/FmScrollingText.md)
+- [FmSelect 选择器组件](/components/FmSelect.md)
+- [FmSlider 滑块](/components/FmSlider.md)
+- [FmSmoothSwipe 平滑滑动](/components/FmSmoothSwipe.md)
+- [FmSparklesText 闪耀文字](/components/FmSparklesText.md)
+- [FmSparkline 迷你图组件](/components/FmSparkline.md)
+- [FmSpringDrawer 弹簧抽屉组件](/components/FmSpringDrawer.md)
+- [FmSwitch 开关组件](/components/FmSwitch.md)
+- [FmTabs 标签页组件](/components/FmTabs.md)
+- [FmTextHighlight 文字高亮](/components/FmTextHighlight.md)
+- [FmTimeAgo 相对时间](/components/FmTimeAgo.md)
+- [FmTimeline 时间轴组件](/components/FmTimeline.md)
+- [FmToast 轻提示组件](/components/FmToast.md)
+- [FmTrend 趋势标识组件](/components/FmTrend.md)
+
+### 
+
+- [购买专业版](/buy.md)
+- [技术支持](/support.md)
+
+### Other
+
+- [交换友链](/links.md)
+- [移动端支持](/guide/mobile-support.md)
+- [组件介绍](/components.md)
